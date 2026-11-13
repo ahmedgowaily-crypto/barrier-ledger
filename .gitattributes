@@ -1,0 +1,6 @@
+* text=auto eol=lf
+
+# Fixtures are compared byte for byte in CI, including their CRLF line endings
+# and the Windows-1256 copies. Git must never rewrite them.
+tests/fixtures/** -text
+*.xlsx binary

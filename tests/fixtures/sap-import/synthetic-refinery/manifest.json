@@ -1,0 +1,4139 @@
+{
+  "dataset": {
+    "name": "Tal Al Zumurrud Refinery (fictional)",
+    "fictional": true,
+    "notice": "Every name, code, tag, vendor and description in this dataset is invented. It is not derived from any real company, plant or document.",
+    "seed": 20261113,
+    "generator_version": "1.0.0"
+  },
+  "structure": {
+    "segment_separator": "-",
+    "fl_code_mask": "^[A-Z]{2}\\d(-[A-Z]{3}(-[A-Z]\\d{2}(-[A-Z]{1,3}\\d{3}[A-Z]?)?)?)?$",
+    "segment_levels": [
+      {
+        "segment": 1,
+        "iso14224_level": 3,
+        "name": "Installation"
+      },
+      {
+        "segment": 2,
+        "iso14224_level": 4,
+        "name": "Plant / Unit"
+      },
+      {
+        "segment": 3,
+        "iso14224_level": 5,
+        "name": "Section / System"
+      },
+      {
+        "segment": 4,
+        "iso14224_level": 5,
+        "sub_level": 1,
+        "name": "Tag-level position (sub-level 1 of Section / System)"
+      }
+    ],
+    "installations": [
+      {
+        "code": "TZ1",
+        "name": "Tal Al Zumurrud Refinery - Process Area"
+      },
+      {
+        "code": "TZ2",
+        "name": "Tal Al Zumurrud Refinery - Marine Terminal"
+      }
+    ],
+    "plant_units": [
+      {
+        "fl_code": "TZ1-CDU",
+        "name": "Crude Distillation Unit",
+        "tag_prefix": "11"
+      },
+      {
+        "fl_code": "TZ1-VDU",
+        "name": "Vacuum Distillation Unit",
+        "tag_prefix": "12"
+      },
+      {
+        "fl_code": "TZ1-NHT",
+        "name": "Naphtha Hydrotreater",
+        "tag_prefix": "13"
+      },
+      {
+        "fl_code": "TZ1-UTL",
+        "name": "Utilities",
+        "tag_prefix": "21"
+      },
+      {
+        "fl_code": "TZ2-TKF",
+        "name": "Tank Farm",
+        "tag_prefix": "31"
+      },
+      {
+        "fl_code": "TZ2-JTY",
+        "name": "Jetty and Loading",
+        "tag_prefix": "32"
+      }
+    ],
+    "building_subtree_root": "TZ1-BLD"
+  },
+  "files": [
+    {
+      "name": "fl_master.csv",
+      "kind": "FL",
+      "format": "csv",
+      "encoding": "utf-8 with BOM",
+      "sha256": "31654234e6fdd590fb22bdc6ea40c324da44e40f82b88f4019eebf6254f4a261",
+      "data_rows": 3029
+    },
+    {
+      "name": "fl_master.cp1256.csv",
+      "kind": "FL",
+      "format": "csv",
+      "encoding": "windows-1256",
+      "sha256": "931aded38fe7f5aafa717ae9749eeb86d0d824fac118b2e7f13fb366ae1cf3f4",
+      "data_rows": 3029
+    },
+    {
+      "name": "fl_master.xlsx",
+      "kind": "FL",
+      "format": "xlsx",
+      "data_rows": 3029
+    },
+    {
+      "name": "equipment_master.csv",
+      "kind": "EQUIP",
+      "format": "csv",
+      "encoding": "utf-8 with BOM",
+      "sha256": "4f328bf1b01546b91d110e0ebacf05ee74f89068750df63c4602d2234d1bd476",
+      "data_rows": 8231
+    },
+    {
+      "name": "equipment_master.cp1256.csv",
+      "kind": "EQUIP",
+      "format": "csv",
+      "encoding": "windows-1256",
+      "sha256": "168a06242093285620bee1770b3083aa0d42c2514ed3bdd773b2540d30d1534f",
+      "data_rows": 8231
+    },
+    {
+      "name": "equipment_master.xlsx",
+      "kind": "EQUIP",
+      "format": "xlsx",
+      "data_rows": 8231
+    }
+  ],
+  "column_map": {
+    "FL": {
+      "Functional Loc.": "fl_code",
+      "Description": "fl_description",
+      "SupFunctLoc.": "superior_fl",
+      "Object Type": "object_type",
+      "Sort Field": "sort_field",
+      "Plant Section": "plant_section",
+      "Planner Group": "planner_group",
+      "Main WorkCtr": "main_work_center",
+      "System Status": "system_status",
+      "ABC Indic.": "abc_indicator"
+    },
+    "EQUIP": {
+      "Equipment": "equipment_no",
+      "Description": "equipment_description",
+      "Functional Loc.": "installed_at_fl",
+      "Object Type": "object_type",
+      "Sort Field": "sort_field",
+      "Manufacturer": "manufacturer",
+      "Model number": "model",
+      "ManufSerialNo.": "serial_no",
+      "System Status": "system_status",
+      "ABC Indic.": "abc_indicator",
+      "Planner Group": "planner_group",
+      "Main WorkCtr": "main_work_center"
+    }
+  },
+  "counts": {
+    "fl_rows": 3029,
+    "fl_distinct_keys": 3025,
+    "equipment_rows": 8231,
+    "equipment_distinct_keys": 8225
+  },
+  "object_types": {
+    "mapped": [
+      {
+        "code": "PUMP-CF",
+        "suggested_class": "Centrifugal pump",
+        "category": "Rotating"
+      },
+      {
+        "code": "PUMP-RC",
+        "suggested_class": "Reciprocating pump",
+        "category": "Rotating"
+      },
+      {
+        "code": "PUMP-FW",
+        "suggested_class": "Fire water pump",
+        "category": "Safety and control"
+      },
+      {
+        "code": "COMP-CF",
+        "suggested_class": "Centrifugal compressor",
+        "category": "Rotating"
+      },
+      {
+        "code": "MOTOR-LV",
+        "suggested_class": "Electric motor (LV)",
+        "category": "Rotating"
+      },
+      {
+        "code": "MOTOR-HV",
+        "suggested_class": "Electric motor (HV)",
+        "category": "Rotating"
+      },
+      {
+        "code": "DRV-DSL",
+        "suggested_class": "Combustion engine",
+        "category": "Rotating"
+      },
+      {
+        "code": "FAN",
+        "suggested_class": "Fan / blower",
+        "category": "Rotating"
+      },
+      {
+        "code": "MIXER",
+        "suggested_class": "Mixer",
+        "category": "Rotating"
+      },
+      {
+        "code": "GEARBOX",
+        "suggested_class": "Gearbox",
+        "category": "Rotating"
+      },
+      {
+        "code": "COUPLING",
+        "suggested_class": "Coupling",
+        "category": "Rotating"
+      },
+      {
+        "code": "MSEAL",
+        "suggested_class": "Mechanical seal",
+        "category": "Rotating"
+      },
+      {
+        "code": "HX-ST",
+        "suggested_class": "Shell and tube heat exchanger",
+        "category": "Mechanical"
+      },
+      {
+        "code": "HX-AC",
+        "suggested_class": "Air cooled heat exchanger",
+        "category": "Mechanical"
+      },
+      {
+        "code": "VESSEL",
+        "suggested_class": "Pressure vessel",
+        "category": "Mechanical"
+      },
+      {
+        "code": "COLUMN",
+        "suggested_class": "Column",
+        "category": "Mechanical"
+      },
+      {
+        "code": "HEATER",
+        "suggested_class": "Fired heater",
+        "category": "Mechanical"
+      },
+      {
+        "code": "BOILER",
+        "suggested_class": "Boiler",
+        "category": "Mechanical"
+      },
+      {
+        "code": "BURNER",
+        "suggested_class": "Burner",
+        "category": "Mechanical"
+      },
+      {
+        "code": "TANK-ST",
+        "suggested_class": "Storage tank",
+        "category": "Mechanical"
+      },
+      {
+        "code": "FILTER",
+        "suggested_class": "Filter / strainer",
+        "category": "Mechanical"
+      },
+      {
+        "code": "DAMPENER",
+        "suggested_class": "Pulsation dampener",
+        "category": "Mechanical"
+      },
+      {
+        "code": "LOADARM",
+        "suggested_class": "Loading arm",
+        "category": "Mechanical"
+      },
+      {
+        "code": "HPU",
+        "suggested_class": "Hydraulic power unit",
+        "category": "Mechanical"
+      },
+      {
+        "code": "VALVE-MO",
+        "suggested_class": "Motor operated valve",
+        "category": "Mechanical"
+      },
+      {
+        "code": "ACT-EL",
+        "suggested_class": "Electric actuator",
+        "category": "Mechanical"
+      },
+      {
+        "code": "ACT-PN",
+        "suggested_class": "Pneumatic actuator",
+        "category": "Mechanical"
+      },
+      {
+        "code": "TRANSF",
+        "suggested_class": "Power transformer",
+        "category": "Electrical"
+      },
+      {
+        "code": "SWGR",
+        "suggested_class": "Switchgear",
+        "category": "Electrical"
+      },
+      {
+        "code": "BREAKER",
+        "suggested_class": "Circuit breaker",
+        "category": "Electrical"
+      },
+      {
+        "code": "RELAY",
+        "suggested_class": "Protection relay",
+        "category": "Electrical"
+      },
+      {
+        "code": "UPS",
+        "suggested_class": "Uninterruptible power supply",
+        "category": "Electrical"
+      },
+      {
+        "code": "PSV",
+        "suggested_class": "Pressure safety valve",
+        "category": "Safety and control"
+      },
+      {
+        "code": "PVRV",
+        "suggested_class": "Pressure/vacuum relief valve",
+        "category": "Safety and control"
+      },
+      {
+        "code": "ESDV",
+        "suggested_class": "Emergency shutdown valve",
+        "category": "Safety and control"
+      },
+      {
+        "code": "ERC",
+        "suggested_class": "Emergency release coupling",
+        "category": "Safety and control"
+      },
+      {
+        "code": "DELUGE",
+        "suggested_class": "Deluge valve",
+        "category": "Safety and control"
+      },
+      {
+        "code": "PANEL-FP",
+        "suggested_class": "Fire pump controller",
+        "category": "Safety and control"
+      },
+      {
+        "code": "DET-GAS",
+        "suggested_class": "Gas detector",
+        "category": "Safety and control"
+      },
+      {
+        "code": "DET-FLAME",
+        "suggested_class": "Flame detector",
+        "category": "Safety and control"
+      },
+      {
+        "code": "LOGIC-SIS",
+        "suggested_class": "Safety logic solver",
+        "category": "Safety and control"
+      },
+      {
+        "code": "SOLENOID",
+        "suggested_class": "Solenoid valve",
+        "category": "Safety and control"
+      },
+      {
+        "code": "LIMIT-SW",
+        "suggested_class": "Limit switch",
+        "category": "Safety and control"
+      },
+      {
+        "code": "VIB-SW",
+        "suggested_class": "Vibration switch",
+        "category": "Safety and control"
+      },
+      {
+        "code": "CV",
+        "suggested_class": "Control valve",
+        "category": "Safety and control"
+      },
+      {
+        "code": "POSNR",
+        "suggested_class": "Valve positioner",
+        "category": "Safety and control"
+      },
+      {
+        "code": "TX-FLOW",
+        "suggested_class": "Flow transmitter",
+        "category": "Safety and control"
+      },
+      {
+        "code": "TX-PRESS",
+        "suggested_class": "Pressure transmitter",
+        "category": "Safety and control"
+      },
+      {
+        "code": "TX-TEMP",
+        "suggested_class": "Temperature transmitter",
+        "category": "Safety and control"
+      },
+      {
+        "code": "TX-LEVEL",
+        "suggested_class": "Level transmitter",
+        "category": "Safety and control"
+      },
+      {
+        "code": "TE-TC",
+        "suggested_class": "Temperature element",
+        "category": "Safety and control"
+      },
+      {
+        "code": "TWELL",
+        "suggested_class": "Thermowell",
+        "category": "Safety and control"
+      },
+      {
+        "code": "FE-ORIF",
+        "suggested_class": "Flow element",
+        "category": "Safety and control"
+      },
+      {
+        "code": "GAUGE-P",
+        "suggested_class": "Pressure gauge",
+        "category": "Safety and control"
+      },
+      {
+        "code": "GAUGE-T",
+        "suggested_class": "Temperature gauge",
+        "category": "Safety and control"
+      },
+      {
+        "code": "GAUGE-L",
+        "suggested_class": "Level gauge",
+        "category": "Safety and control"
+      },
+      {
+        "code": "ANALYZER",
+        "suggested_class": "Process analyzer",
+        "category": "Safety and control"
+      },
+      {
+        "code": "SAMPLE-SYS",
+        "suggested_class": "Sample system",
+        "category": "Safety and control"
+      }
+    ],
+    "unmapped": [
+      "Z001",
+      "Z002",
+      "Z-MISC",
+      "OTHER",
+      "GEN",
+      "UNKN",
+      "ZINST9",
+      "X-TEMP",
+      "LEGACY",
+      "SPARE",
+      "ZZ-OLD",
+      "TOOLS"
+    ]
+  },
+  "seeded_defects": [
+    {
+      "id": "S01",
+      "title": "Objects whose system status carries DLFL or INAC",
+      "triggers": [
+        "C2"
+      ],
+      "expected_count": 40,
+      "count_unit": "objects",
+      "expected": "C2 excludes exactly these 40 rows (8 functional locations and 32 equipment).",
+      "rows_listed": true,
+      "rows": [
+        {
+          "file": "FL",
+          "key": "TZ1-UTL-S04-PSV115",
+          "note": "CRTE DLFL"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004480",
+          "note": "CRTE DLFL"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-UTL-S02-FD102",
+          "note": "CRTE DLFL"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004262",
+          "note": "CRTE DLFL"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-NHT-S02-PSV107",
+          "note": "CRTE DLFL"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002937",
+          "note": "CRTE DLFL"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-UTL-S06-PSV123",
+          "note": "CRTE DLFL"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004799",
+          "note": "CRTE DLFL"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-CDU-S04-PSV122",
+          "note": "CRTE INAC"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000473",
+          "note": "CRTE INAC"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-NHT-S02-GD102",
+          "note": "CRTE INAC"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002862",
+          "note": "CRTE INAC"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-UTL-S03-PSV109",
+          "note": "CRTE INAC"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004383",
+          "note": "CRTE INAC"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-UTL-S08-FD109",
+          "note": "CRTE INAC"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005022",
+          "note": "CRTE INAC"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003033",
+          "note": "CRTE DLFL"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001128",
+          "note": "CRTE DLFL"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001875",
+          "note": "CRTE DLFL"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005948",
+          "note": "CRTE DLFL"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005140",
+          "note": "CRTE DLFL"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003166",
+          "note": "CRTE DLFL"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004767",
+          "note": "CRTE DLFL"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002943",
+          "note": "CRTE DLFL"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001190",
+          "note": "CRTE DLFL"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004500",
+          "note": "CRTE DLFL"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003644",
+          "note": "CRTE DLFL"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007304",
+          "note": "CRTE DLFL"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002993",
+          "note": "CRTE INAC"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005056",
+          "note": "CRTE INAC"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002607",
+          "note": "CRTE INAC"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005272",
+          "note": "CRTE INAC"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004820",
+          "note": "CRTE INAC"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007493",
+          "note": "CRTE INAC"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000938",
+          "note": "CRTE INAC"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004678",
+          "note": "CRTE INAC"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006437",
+          "note": "CRTE INAC"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007724",
+          "note": "CRTE INAC"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007438",
+          "note": "CRTE INAC"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003950",
+          "note": "CRTE INAC"
+        }
+      ]
+    },
+    {
+      "id": "S02",
+      "title": "Functional locations with a blank superior FL",
+      "triggers": [
+        "C3",
+        "D7"
+      ],
+      "expected_count": 25,
+      "count_unit": "functional_locations",
+      "expected": "C3 derives the parent of all 25 from the FL code. For 22 the parent exists in File A. For 3 the parent TZ1-UTL-S11 is absent, so one placeholder FL flagged DERIVED is created with a warning. The two installation roots also have a blank superior and are not part of this count.",
+      "rows_listed": true,
+      "rows": [
+        {
+          "file": "FL",
+          "key": "TZ2-TKF-S02-P107",
+          "note": "parent exists in File A"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-CDU-S04-T103",
+          "note": "parent exists in File A"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-VDU-S09-E127",
+          "note": "parent exists in File A"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-UTL-S09-T105",
+          "note": "parent exists in File A"
+        },
+        {
+          "file": "FL",
+          "key": "TZ2-JTY-S02-DV105",
+          "note": "parent exists in File A"
+        },
+        {
+          "file": "FL",
+          "key": "TZ2-TKF-S09-PIC125",
+          "note": "parent exists in File A"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-NHT-S02-P111",
+          "note": "parent exists in File A"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-NHT-S04-LIC105",
+          "note": "parent exists in File A"
+        },
+        {
+          "file": "FL",
+          "key": "TZ2-TKF-S08-PIC121",
+          "note": "parent exists in File A"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-UTL-S09-PIC125",
+          "note": "parent exists in File A"
+        },
+        {
+          "file": "FL",
+          "key": "TZ2-JTY-S09-E137",
+          "note": "parent exists in File A"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-CDU-S07-PSV134",
+          "note": "parent exists in File A"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-NHT-S02-FIC112",
+          "note": "parent exists in File A"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-NHT-S02-PSV108",
+          "note": "parent exists in File A"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-UTL-S06-TIC120",
+          "note": "parent exists in File A"
+        },
+        {
+          "file": "FL",
+          "key": "TZ2-TKF-S10-V126",
+          "note": "parent exists in File A"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-CDU-S05-P135",
+          "note": "parent exists in File A"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-VDU-S09-H104",
+          "note": "parent exists in File A"
+        },
+        {
+          "file": "FL",
+          "key": "TZ2-TKF-S08-PSV125",
+          "note": "parent exists in File A"
+        },
+        {
+          "file": "FL",
+          "key": "TZ2-TKF-S08-E126",
+          "note": "parent exists in File A"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-VDU-S07-PIC128",
+          "note": "parent exists in File A"
+        },
+        {
+          "file": "FL",
+          "key": "TZ2-TKF-S02-E105",
+          "note": "parent exists in File A"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-UTL-S11-P160",
+          "note": "parent absent from File A"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-UTL-S11-V126",
+          "note": "parent absent from File A"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-UTL-S11-PSV134",
+          "note": "parent absent from File A"
+        }
+      ]
+    },
+    {
+      "id": "S03",
+      "title": "Equipment installed at a functional location that is not in File A",
+      "triggers": [
+        "D2"
+      ],
+      "expected_count": 15,
+      "count_unit": "equipment",
+      "expected": "D2 raises one Error issue per row. Commit is blocked until resolved.",
+      "rows_listed": true,
+      "rows": [
+        {
+          "file": "EQUIP",
+          "key": "10008278",
+          "note": "installed at TZ1-CDU-S05-P901"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008279",
+          "note": "installed at TZ1-VDU-S03-P902"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008280",
+          "note": "installed at TZ1-CDU-S10-P903"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008281",
+          "note": "installed at TZ1-VDU-S07-P904"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008282",
+          "note": "installed at TZ1-NHT-S03-P905"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008283",
+          "note": "installed at TZ1-NHT-S04-P906"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008284",
+          "note": "installed at TZ2-JTY-S08-P907"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008285",
+          "note": "installed at TZ1-NHT-S10-P908"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008286",
+          "note": "installed at TZ2-TKF-S08-P909"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008287",
+          "note": "installed at TZ2-JTY-S06-P910"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008288",
+          "note": "installed at TZ1-CDU-S05-P901"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008289",
+          "note": "installed at TZ1-VDU-S03-P902"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008290",
+          "note": "installed at TZ1-CDU-S10-P903"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008291",
+          "note": "installed at TZ1-VDU-S07-P904"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008292",
+          "note": "installed at TZ1-NHT-S03-P905"
+        }
+      ]
+    },
+    {
+      "id": "S04",
+      "title": "Keys that appear twice in their file",
+      "triggers": [
+        "D1"
+      ],
+      "expected_count": 10,
+      "count_unit": "keys",
+      "expected": "D1 raises one Error issue per duplicated key: 4 in File A and 6 in File B. Commit is blocked until resolved.",
+      "rows_listed": true,
+      "rows": [
+        {
+          "file": "FL",
+          "key": "TZ2-TKF-S06-V116",
+          "note": "identical second row"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-CDU-S02-E106",
+          "note": "identical second row"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-NHT-S02-E108",
+          "note": "identical second row"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-NHT-S07-PIC126",
+          "note": "identical second row"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007893",
+          "note": "second row with a different description"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000367",
+          "note": "second row with a different description"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007435",
+          "note": "second row with a different description"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003473",
+          "note": "identical second row"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004216",
+          "note": "identical second row"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003075",
+          "note": "identical second row"
+        }
+      ]
+    },
+    {
+      "id": "S05",
+      "title": "Equipment whose attribute differs from the value on its functional location",
+      "triggers": [
+        "C5"
+      ],
+      "expected_count": 3,
+      "count_unit": "equipment",
+      "expected": "C5 keeps the equipment value and records both values in an INFO issue.",
+      "rows_listed": true,
+      "rows": [
+        {
+          "file": "EQUIP",
+          "key": "10006763",
+          "note": "planner_group: FL=P31, equipment=P11"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007233",
+          "note": "main_work_center: FL=MECH-2, equipment=ELEC-2"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001076",
+          "note": "abc_indicator: FL=B, equipment=A"
+        }
+      ]
+    },
+    {
+      "id": "S06",
+      "title": "Equipment carrying an object type that no default map knows",
+      "triggers": [
+        "D5"
+      ],
+      "expected_count": 12,
+      "count_unit": "object_types",
+      "expected": "The mapping screen lists these 12 object types as unmapped. Commit is allowed; the assets load as UNCLASSIFIED and lower the D5 pass rate.",
+      "rows_listed": true,
+      "rows": [
+        {
+          "file": "EQUIP",
+          "key": "10001479",
+          "note": "Z001"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001248",
+          "note": "Z001"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008027",
+          "note": "Z001"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000308",
+          "note": "Z001"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007974",
+          "note": "Z001"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004356",
+          "note": "Z001"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004634",
+          "note": "Z001"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006192",
+          "note": "Z001"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002398",
+          "note": "Z001"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007673",
+          "note": "Z001"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007730",
+          "note": "Z001"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005739",
+          "note": "Z001"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000500",
+          "note": "Z001"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002661",
+          "note": "Z001"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002808",
+          "note": "Z001"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003458",
+          "note": "Z001"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004684",
+          "note": "Z001"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005219",
+          "note": "Z001"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006996",
+          "note": "Z001"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004314",
+          "note": "Z002"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002209",
+          "note": "Z002"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006469",
+          "note": "Z002"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004786",
+          "note": "Z002"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000249",
+          "note": "Z002"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002409",
+          "note": "Z002"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007750",
+          "note": "Z002"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003030",
+          "note": "Z002"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001714",
+          "note": "Z-MISC"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003611",
+          "note": "Z-MISC"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001839",
+          "note": "Z-MISC"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002653",
+          "note": "Z-MISC"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004604",
+          "note": "Z-MISC"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004512",
+          "note": "Z-MISC"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003321",
+          "note": "Z-MISC"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008051",
+          "note": "Z-MISC"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003439",
+          "note": "Z-MISC"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008181",
+          "note": "Z-MISC"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006953",
+          "note": "Z-MISC"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003759",
+          "note": "OTHER"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005320",
+          "note": "OTHER"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006069",
+          "note": "OTHER"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002387",
+          "note": "OTHER"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001200",
+          "note": "OTHER"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007056",
+          "note": "OTHER"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007913",
+          "note": "OTHER"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001188",
+          "note": "OTHER"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005353",
+          "note": "OTHER"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003615",
+          "note": "OTHER"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001011",
+          "note": "OTHER"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007507",
+          "note": "OTHER"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005771",
+          "note": "OTHER"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000144",
+          "note": "OTHER"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001899",
+          "note": "OTHER"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007979",
+          "note": "OTHER"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001861",
+          "note": "GEN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002897",
+          "note": "GEN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007678",
+          "note": "GEN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004696",
+          "note": "GEN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006235",
+          "note": "GEN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000219",
+          "note": "GEN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002048",
+          "note": "GEN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000379",
+          "note": "GEN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003955",
+          "note": "GEN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001386",
+          "note": "GEN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001260",
+          "note": "GEN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000148",
+          "note": "GEN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006926",
+          "note": "GEN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007359",
+          "note": "GEN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002284",
+          "note": "GEN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001734",
+          "note": "GEN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007088",
+          "note": "GEN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001226",
+          "note": "GEN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007984",
+          "note": "GEN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005522",
+          "note": "GEN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005912",
+          "note": "GEN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001147",
+          "note": "GEN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006007",
+          "note": "GEN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006476",
+          "note": "GEN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004234",
+          "note": "GEN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004518",
+          "note": "GEN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006268",
+          "note": "GEN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007156",
+          "note": "GEN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007570",
+          "note": "GEN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002686",
+          "note": "UNKN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001967",
+          "note": "UNKN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005296",
+          "note": "UNKN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006158",
+          "note": "UNKN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001323",
+          "note": "UNKN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003375",
+          "note": "UNKN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007632",
+          "note": "UNKN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005724",
+          "note": "UNKN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000660",
+          "note": "UNKN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006737",
+          "note": "UNKN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003540",
+          "note": "UNKN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005943",
+          "note": "UNKN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000557",
+          "note": "UNKN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008254",
+          "note": "UNKN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004195",
+          "note": "UNKN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008078",
+          "note": "UNKN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007568",
+          "note": "UNKN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000739",
+          "note": "UNKN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002351",
+          "note": "UNKN"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006474",
+          "note": "ZINST9"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003614",
+          "note": "ZINST9"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007351",
+          "note": "ZINST9"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004289",
+          "note": "ZINST9"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000614",
+          "note": "ZINST9"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007086",
+          "note": "ZINST9"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004966",
+          "note": "ZINST9"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005832",
+          "note": "ZINST9"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003712",
+          "note": "ZINST9"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001922",
+          "note": "ZINST9"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004919",
+          "note": "ZINST9"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006190",
+          "note": "ZINST9"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002528",
+          "note": "ZINST9"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000236",
+          "note": "ZINST9"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004894",
+          "note": "ZINST9"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000366",
+          "note": "ZINST9"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000751",
+          "note": "ZINST9"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003392",
+          "note": "ZINST9"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007960",
+          "note": "ZINST9"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005852",
+          "note": "ZINST9"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002502",
+          "note": "ZINST9"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000375",
+          "note": "X-TEMP"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007034",
+          "note": "X-TEMP"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000045",
+          "note": "X-TEMP"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005021",
+          "note": "X-TEMP"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005109",
+          "note": "X-TEMP"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003483",
+          "note": "X-TEMP"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006320",
+          "note": "X-TEMP"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000665",
+          "note": "X-TEMP"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007918",
+          "note": "X-TEMP"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003051",
+          "note": "X-TEMP"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001441",
+          "note": "X-TEMP"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002002",
+          "note": "X-TEMP"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000999",
+          "note": "X-TEMP"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008202",
+          "note": "X-TEMP"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001717",
+          "note": "X-TEMP"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006929",
+          "note": "X-TEMP"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003862",
+          "note": "X-TEMP"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005105",
+          "note": "X-TEMP"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008266",
+          "note": "X-TEMP"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000443",
+          "note": "X-TEMP"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007806",
+          "note": "X-TEMP"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001472",
+          "note": "LEGACY"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004084",
+          "note": "LEGACY"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001992",
+          "note": "LEGACY"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006850",
+          "note": "LEGACY"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001827",
+          "note": "LEGACY"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001923",
+          "note": "LEGACY"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005087",
+          "note": "LEGACY"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004807",
+          "note": "LEGACY"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007216",
+          "note": "LEGACY"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002670",
+          "note": "LEGACY"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007924",
+          "note": "LEGACY"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005888",
+          "note": "SPARE"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004468",
+          "note": "SPARE"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003607",
+          "note": "SPARE"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004111",
+          "note": "SPARE"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003455",
+          "note": "SPARE"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005680",
+          "note": "SPARE"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002082",
+          "note": "SPARE"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005497",
+          "note": "SPARE"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007725",
+          "note": "SPARE"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001250",
+          "note": "SPARE"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006047",
+          "note": "SPARE"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004354",
+          "note": "SPARE"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005242",
+          "note": "SPARE"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004175",
+          "note": "SPARE"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005971",
+          "note": "SPARE"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008053",
+          "note": "SPARE"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007298",
+          "note": "SPARE"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003772",
+          "note": "SPARE"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005372",
+          "note": "SPARE"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000820",
+          "note": "ZZ-OLD"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000971",
+          "note": "ZZ-OLD"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000258",
+          "note": "ZZ-OLD"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004590",
+          "note": "ZZ-OLD"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004506",
+          "note": "ZZ-OLD"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004547",
+          "note": "ZZ-OLD"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007700",
+          "note": "ZZ-OLD"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008102",
+          "note": "ZZ-OLD"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006761",
+          "note": "TOOLS"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001451",
+          "note": "TOOLS"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007575",
+          "note": "TOOLS"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004599",
+          "note": "TOOLS"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001763",
+          "note": "TOOLS"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002117",
+          "note": "TOOLS"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000788",
+          "note": "TOOLS"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000888",
+          "note": "TOOLS"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003186",
+          "note": "TOOLS"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007349",
+          "note": "TOOLS"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007430",
+          "note": "TOOLS"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002231",
+          "note": "TOOLS"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001306",
+          "note": "TOOLS"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001054",
+          "note": "TOOLS"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005195",
+          "note": "TOOLS"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002224",
+          "note": "TOOLS"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006040",
+          "note": "TOOLS"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006276",
+          "note": "TOOLS"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000114",
+          "note": "TOOLS"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006408",
+          "note": "TOOLS"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007812",
+          "note": "TOOLS"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007794",
+          "note": "TOOLS"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005896",
+          "note": "TOOLS"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002880",
+          "note": "TOOLS"
+        }
+      ]
+    },
+    {
+      "id": "S07",
+      "title": "Building subtree that a tenant would exclude",
+      "triggers": [
+        "C1"
+      ],
+      "expected_count": 1,
+      "count_unit": "subtrees",
+      "expected": "With TZ1-BLD added to the C1 exclusion list, C1 excludes these 28 functional locations and the 36 equipment installed below them. With the default empty list nothing is excluded.",
+      "rows_listed": true,
+      "rows": [
+        {
+          "file": "FL",
+          "key": "TZ1-BLD"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-BLD-B01"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-BLD-B01-UPS101"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-BLD-B01-AHU101"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-BLD-B01-AHU102"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-BLD-B01-AHU103"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-BLD-B01-AHU104"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-BLD-B01-AHU105"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-BLD-B01-DB101"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-BLD-B01-UPS102"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-BLD-B02"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-BLD-B02-AHU106"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-BLD-B02-AHU107"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-BLD-B02-DB102"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-BLD-B02-DB103"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-BLD-B02-UPS103"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-BLD-B02-AHU108"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-BLD-B02-AHU109"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-BLD-B02-AHU110"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-BLD-B03"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-BLD-B03-AHU111"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-BLD-B03-UPS104"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-BLD-B03-UPS105"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-BLD-B03-UPS106"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-BLD-B03-DB104"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-BLD-B03-DB105"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-BLD-B03-AHU112"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-BLD-B03-DB106"
+        }
+      ]
+    },
+    {
+      "id": "S08",
+      "title": "Functional locations with no equipment on themselves or any descendant",
+      "triggers": [
+        "C4"
+      ],
+      "expected_count": 31,
+      "count_unit": "functional_locations",
+      "expected": "C4 excludes exactly these rows; every ancestor that still has equipment below it is kept.",
+      "rows_listed": true,
+      "rows": [
+        {
+          "file": "FL",
+          "key": "TZ1-NHT-S10-XV115",
+          "note": "leaf position"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-CDU-S10-XV124",
+          "note": "leaf position"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-VDU-S05-P135A",
+          "note": "leaf position"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-VDU-S09-V131",
+          "note": "leaf position"
+        },
+        {
+          "file": "FL",
+          "key": "TZ2-JTY-S10-LIC121",
+          "note": "leaf position"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-NHT-S07-P149B",
+          "note": "leaf position"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-CDU-S01-P102B",
+          "note": "leaf position"
+        },
+        {
+          "file": "FL",
+          "key": "TZ2-JTY-S08-PSV124",
+          "note": "leaf position"
+        },
+        {
+          "file": "FL",
+          "key": "TZ2-TKF-S03-MOV107",
+          "note": "leaf position"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-CDU-S02-E105",
+          "note": "leaf position"
+        },
+        {
+          "file": "FL",
+          "key": "TZ2-JTY-S08-DV115",
+          "note": "leaf position"
+        },
+        {
+          "file": "FL",
+          "key": "TZ2-JTY-S06-FP107",
+          "note": "leaf position"
+        },
+        {
+          "file": "FL",
+          "key": "TZ2-TKF-S09-PSV131",
+          "note": "leaf position"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-NHT-S04-GD108",
+          "note": "leaf position"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-NHT-S05-E117",
+          "note": "leaf position"
+        },
+        {
+          "file": "FL",
+          "key": "TZ2-TKF-S04-PSV111",
+          "note": "leaf position"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-NHT-S05-XV108",
+          "note": "leaf position"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-NHT-S10-H104",
+          "note": "leaf position"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-NHT-S03-PIC114",
+          "note": "leaf position"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-UTL-S07-E123",
+          "note": "leaf position"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-UTL-S01-LIC105",
+          "note": "leaf position"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-CDU-S06-E122",
+          "note": "leaf position"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-CDU-S07-TIC117",
+          "note": "leaf position"
+        },
+        {
+          "file": "FL",
+          "key": "TZ2-TKF-S04-PIC112",
+          "note": "leaf position"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-VDU-S08-P152B",
+          "note": "leaf position"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-CDU-S05-PSV127",
+          "note": "leaf position"
+        },
+        {
+          "file": "FL",
+          "key": "TZ2-TKF-S11",
+          "note": "empty section"
+        },
+        {
+          "file": "FL",
+          "key": "TZ2-TKF-S11-T182",
+          "note": "position in empty section"
+        },
+        {
+          "file": "FL",
+          "key": "TZ2-TKF-S11-T183",
+          "note": "position in empty section"
+        },
+        {
+          "file": "FL",
+          "key": "TZ2-TKF-S11-P158",
+          "note": "position in empty section"
+        },
+        {
+          "file": "FL",
+          "key": "TZ2-TKF-S11-MOV119",
+          "note": "position in empty section"
+        }
+      ]
+    },
+    {
+      "id": "S09",
+      "title": "Functional location codes that break the declared structure mask",
+      "triggers": [
+        "D9"
+      ],
+      "expected_count": 5,
+      "count_unit": "functional_locations",
+      "expected": "D9 flags exactly these codes: the last segment starts with digits instead of letters.",
+      "rows_listed": true,
+      "rows": [
+        {
+          "file": "FL",
+          "key": "TZ1-UTL-S05-102AT",
+          "note": "well-formed code would be TZ1-UTL-S05-AT102"
+        },
+        {
+          "file": "FL",
+          "key": "TZ2-JTY-S01-101P",
+          "note": "well-formed code would be TZ2-JTY-S01-P101"
+        },
+        {
+          "file": "FL",
+          "key": "TZ2-JTY-S02-101K",
+          "note": "well-formed code would be TZ2-JTY-S02-K101"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-VDU-S02-105PSV",
+          "note": "well-formed code would be TZ1-VDU-S02-PSV105"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-VDU-S07-122V",
+          "note": "well-formed code would be TZ1-VDU-S07-V122"
+        }
+      ]
+    },
+    {
+      "id": "S10",
+      "title": "Descriptions of three characters or fewer",
+      "triggers": [
+        "D4"
+      ],
+      "expected_count": 24,
+      "count_unit": "rows",
+      "expected": "D4 fails for exactly these rows: 18 equipment and 6 functional locations.",
+      "rows_listed": true,
+      "rows": [
+        {
+          "file": "EQUIP",
+          "key": "10004692",
+          "note": "-"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000861",
+          "note": "NA"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006308",
+          "note": "TBD"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005500",
+          "note": "XX"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000966",
+          "note": "?"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005131",
+          "note": "N/A"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002184",
+          "note": "-"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002785",
+          "note": "NA"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008258",
+          "note": "TBD"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001866",
+          "note": "XX"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003938",
+          "note": "?"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002705",
+          "note": "N/A"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006460",
+          "note": "-"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001070",
+          "note": "NA"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000905",
+          "note": "TBD"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005502",
+          "note": "XX"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001468",
+          "note": "?"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002765",
+          "note": "N/A"
+        },
+        {
+          "file": "FL",
+          "key": "TZ2-JTY-S07-E129",
+          "note": "-"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-UTL-S03-PIC106",
+          "note": "NA"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-VDU-S04-FIC123",
+          "note": "TBD"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-VDU-S02-XV102",
+          "note": "XX"
+        },
+        {
+          "file": "FL",
+          "key": "TZ1-CDU-S08-FIC126",
+          "note": "?"
+        },
+        {
+          "file": "FL",
+          "key": "TZ2-TKF-S07-TIC118",
+          "note": "N/A"
+        }
+      ]
+    },
+    {
+      "id": "S11",
+      "title": "Equipment sharing a sort field with another equipment",
+      "triggers": [
+        "D6"
+      ],
+      "expected_count": 8,
+      "count_unit": "equipment",
+      "expected": "D6 fails for exactly these 8 equipment: 4 tags, each used by two different equipment numbers.",
+      "rows_listed": true,
+      "rows": [
+        {
+          "file": "EQUIP",
+          "key": "10003926",
+          "note": "13-FV-131"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001360",
+          "note": "13-FV-131"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002371",
+          "note": "12-PM-155B"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002013",
+          "note": "12-PM-155B"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002790",
+          "note": "13-P-106B"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003401",
+          "note": "13-P-106B"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004948",
+          "note": "21-TT-125"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002728",
+          "note": "21-TT-125"
+        }
+      ]
+    },
+    {
+      "id": "S12",
+      "title": "Equipment with a blank sort field",
+      "triggers": [
+        "C8"
+      ],
+      "expected_count": 370,
+      "count_unit": "equipment",
+      "expected": "C8 falls back to the equipment number as asset_tag for exactly these rows.",
+      "rows_listed": true,
+      "rows": [
+        {
+          "file": "EQUIP",
+          "key": "10000001"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000003"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000028"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000048"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000052"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000095"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000100"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000105"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000122"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000145"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000182"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000208"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000212"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000305"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000315"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000357"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000394"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000403"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000422"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000457"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000479"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000505"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000512"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000575"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000587"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000596"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000636"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000652"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000687"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000693"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000706"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000716"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000822"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000831"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000834"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000841"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000856"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000880"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000920"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000923"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000932"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000940"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000952"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000981"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000989"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001087"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001103"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001138"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001218"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001281"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001295"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001315"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001335"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001338"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001339"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001348"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001381"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001419"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001448"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001540"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001553"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001622"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001630"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001636"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001640"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001707"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001736"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001764"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001783"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001797"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001798"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001877"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001885"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001887"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001903"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001939"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001955"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002031"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002042"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002056"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002093"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002112"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002130"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002141"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002154"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002169"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002172"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002234"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002260"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002292"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002307"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002317"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002319"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002322"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002326"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002344"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002359"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002383"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002396"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002412"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002446"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002505"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002544"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002553"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002570"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002590"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002623"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002625"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002662"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002667"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002676"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002694"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002698"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002718"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002777"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002813"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002851"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002876"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002959"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002960"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002963"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003057"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003058"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003062"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003073"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003107"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003108"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003127"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003128"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003189"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003190"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003191"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003216"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003221"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003242"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003243"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003263"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003301"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003323"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003356"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003369"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003385"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003465"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003477"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003487"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003525"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003555"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003589"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003598"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003631"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003633"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003649"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003684"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003696"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003720"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003728"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003754"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003798"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003807"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003809"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003819"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003845"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003887"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003908"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003913"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003935"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003936"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003960"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10003966"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004013"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004030"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004039"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004065"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004073"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004121"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004131"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004134"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004135"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004199"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004202"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004213"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004250"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004251"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004259"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004273"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004305"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004325"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004350"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004370"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004375"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004380"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004390"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004411"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004417"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004439"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004444"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004463"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004491"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004494"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004508"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004522"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004526"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004531"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004566"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004571"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004592"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004594"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004630"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004646"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004700"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004712"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004718"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004728"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004731"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004734"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004763"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004810"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004822"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004825"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004839"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004882"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004898"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004925"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004926"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004928"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004943"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004946"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004973"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004986"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004990"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005008"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005012"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005035"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005051"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005061"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005092"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005099"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005101"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005102"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005142"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005169"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005249"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005267"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005281"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005290"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005456"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005512"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005528"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005554"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005648"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005655"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005658"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005668"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005678"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005688"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005705"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005706"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005709"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005794"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005796"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005797"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005812"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005837"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005851"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005859"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005960"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005974"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006006"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006020"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006036"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006037"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006079"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006149"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006154"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006165"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006166"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006194"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006216"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006310"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006382"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006397"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006406"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006451"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006499"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006509"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006528"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006580"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006586"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006615"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006646"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006651"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006665"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006669"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006687"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006721"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006783"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006804"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006808"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006814"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006820"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006826"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006832"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006861"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006886"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006933"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006934"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006960"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006978"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007033"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007039"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007090"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007104"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007123"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007126"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007137"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007139"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007167"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007179"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007203"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007206"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007237"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007260"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007263"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007276"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007279"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007292"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007321"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007331"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007547"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007548"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007552"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007590"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007602"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007606"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007635"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007649"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007654"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007703"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007710"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007777"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007789"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007791"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007808"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007816"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007824"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007830"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007831"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007832"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007846"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007853"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007865"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007878"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007887"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007888"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007891"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007897"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007952"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008016"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008037"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008058"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008066"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008097"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008125"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008131"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008152"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008177"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008198"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008209"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008214"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10008246"
+        }
+      ]
+    },
+    {
+      "id": "S13",
+      "title": "Equipment with a system status the default status map does not cover",
+      "triggers": [
+        "C6",
+        "D8"
+      ],
+      "expected_count": 12,
+      "count_unit": "equipment",
+      "expected": "C6 maps these to operational status Unknown (status AVLB is not in the default map), and D8 fails for them.",
+      "rows_listed": true,
+      "rows": [
+        {
+          "file": "EQUIP",
+          "key": "10004770",
+          "note": "AVLB"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001917",
+          "note": "AVLB"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005482",
+          "note": "AVLB"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002635",
+          "note": "AVLB"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10007906",
+          "note": "AVLB"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10002095",
+          "note": "AVLB"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10001959",
+          "note": "AVLB"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10005006",
+          "note": "AVLB"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000698",
+          "note": "AVLB"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10000643",
+          "note": "AVLB"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10004856",
+          "note": "AVLB"
+        },
+        {
+          "file": "EQUIP",
+          "key": "10006680",
+          "note": "AVLB"
+        }
+      ]
+    },
+    {
+      "id": "S14",
+      "title": "Equipment with no manufacturer and no model",
+      "triggers": [
+        "D10"
+      ],
+      "expected_count": 2919,
+      "count_unit": "equipment",
+      "expected": "D10 fails for this many distinct equipment numbers. Spread at random, so rows are not listed and this condition may coincide with others.",
+      "rows_listed": false,
+      "rows": []
+    }
+  ]
+}

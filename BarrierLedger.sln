@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{7C9FE50B-71C4-46DE-ADE0-8F917152C807}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarrierLedger.SyntheticSapData", "tools\BarrierLedger.SyntheticSapData\BarrierLedger.SyntheticSapData.csproj", "{F7B5AFDF-1049-49E6-BFE5-35E15C905FDC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F7B5AFDF-1049-49E6-BFE5-35E15C905FDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7B5AFDF-1049-49E6-BFE5-35E15C905FDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7B5AFDF-1049-49E6-BFE5-35E15C905FDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7B5AFDF-1049-49E6-BFE5-35E15C905FDC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F7B5AFDF-1049-49E6-BFE5-35E15C905FDC} = {7C9FE50B-71C4-46DE-ADE0-8F917152C807}
+	EndGlobalSection
+EndGlobal
