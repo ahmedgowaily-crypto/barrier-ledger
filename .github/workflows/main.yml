@@ -1,1 +1,28 @@
+name: CI
 
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Build
+        run: dotnet build BarrierLedger.sln -c Release
+
+      - name: Verify synthetic SAP dataset
+        run: >
+          dotnet run -c Release --no-build
+          --project tools/BarrierLedger.SyntheticSapData
+          -- check --fixtures tests/fixtures/sap-import/synthetic-refinery
